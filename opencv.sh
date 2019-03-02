@@ -3,13 +3,14 @@
 echo "======1、更新系统======"
 sudo apt-get update && sudo apt-get upgrade
 echo "======2、安装依赖======"
-sudo apt-get install build-essential cmake pkg-config
-sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
-sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-sudo apt-get install libxvidcore-dev libx264-dev
-sudo apt-get install libgtk2.0-dev libgtk-3-dev
-sudo apt-get install libatlas-base-dev gfortran
-sudo apt-get install python2.7-dev python3-dev
+sudo apt-get install -y build-essential cmake pkg-config
+sudo apt-get install -y libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install -y libxvidcore-dev libx264-dev
+sudo apt-get install -y libgtk2.0-dev libgtk-3-dev
+sudo apt-get install -y libatlas-base-dev gfortran
+sudo apt-get install -y python2.7-dev python3-dev
+sudo apt-get install -y unzip
 echo "======3、下载OpenCV======"
 cd ~
 wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.3.0.zip
@@ -35,6 +36,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 EOF
 
 echo "======7、创建并进入虚拟环境======"
+source ~/.profile
 mkvirtualenv cv -p python3
 
 echo "======8、安装Numpy======"
